@@ -54,12 +54,13 @@ $(document).ready(function(){
     //Add Section
     $(document).on('click', ".c-repeating-section-add", function() {
     	var section_group 	= $(this).parent().find('.c-repeating-section-group');
-    	var add_section 	= section_group.children().last().clone(true);
+    	var add_section 	= section_group.children().last().clone();
 
     	add_section.css('display', '');
     	add_section.find('.c-editor input').val('');
     	
     	add_section.find('.c-editor input').each(function() {
+    		//console.log($(this));
     		var arr			= $(this).attr('id').split('-');
     		var new_value 	= parseInt(arr[2]) + 1;
     		
@@ -69,11 +70,12 @@ $(document).ready(function(){
     		$(this).attr('id', new_arr);
 
     		if($(this).hasClass('datepicker')){
-    			console.log(new_arr);
-    			$('#'+new_arr).datepicker();
+    			//$('.datepicker');
+    			//console.log(new_arr);
+    			$(this).datepicker();
     		}
     	});
-    	add_section.find('.c-datepicker').attr('id');
+    	//add_section.find('.c-datepicker').attr('id');
 		add_section.appendTo(section_group);
 
 		//numbering
@@ -105,36 +107,10 @@ $(document).ready(function(){
 		});
 	});
 
-    /*$(function () {
-        $('#c-6-252').datepicker();
-        $('#c-6-253').datepicker();
-        $('#c-6-254').datepicker();
-        $('#c-6-255').datepicker();
-    });*/
-	/*$('.c-datepicker').datepicker({
-	    defaultDate: "11/1/2013",
-	});*/
-	/*$(document).on('click', ".c-datepicker", function(){
-	    var id = $(this).attr('id');
-	    $('#'+id).datepicker();
-
-	});*/
 
 	$(function () {
-       $('.datepicker').datetimepicker();
+       $('.datepicker').datepicker();
     });
-
-    /*$('#datetimepicker1').datepicker();*/
-
-    /*$('.datepicker').each(function(){
-	    $(this).datetimepicker();
-	});*/
-
-	/*$('.datepicker').datepicker({
-        uiLibrary: 'bootstrap4'
-    });
-*/	
-	//$('#c-6-252').datepicker();
 
 });
 

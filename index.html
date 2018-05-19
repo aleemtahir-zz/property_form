@@ -17,12 +17,17 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+   <!--  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" /> -->
+
 
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/style.css">    
     <link rel="stylesheet" type="text/css" href="css/gj.css"> 
     <script type="text/javascript" src="js/script.js"></script>
@@ -117,17 +122,11 @@
                               <div class="c-date-date c-field c-col-9 c-sml-col-1 c-span-6 c-sml-span-12">
                                   <div class="c-label  "><label for="c-6-252">Date of Birth</label></div>
                                   <div class="c-editor">
-                                      <div class="input-group date c-editor-date" >
-                                        <input class="datepicker" name="v_dob[]" type="text" id="c-6-252" placeholder="" >
-                                      </div>
-                                      <!-- <div class="c-editor-date-icon input-group-addon"><i class="icon-calendar"></i></div> -->
+                                    <div class="input-group date c-editor-date c-datepicker" >
+                                      <input class="datepicker" name="v_dob[]" type="text" id="c-6-252"placeholder="" >
+                                    </div>
+                                    <div class="c-editor-date-icon input-group-addon"><i class="icon-calendar"></i></div>
                                   </div>
-                                  <!-- <div class="input-group date" data-provide="datepicker">
-                                      <input id="hi" type="text" class="form-control">
-                                      <div class="input-group-addon">
-                                          <span class="glyphicon glyphicon-th"></span>
-                                      </div>
-                                  </div> -->
 
                                   <div class="c-validation"></div>
                               </div>
@@ -461,10 +460,6 @@
                               </div>
                               <div class="c-date-date c-field c-col-9 c-sml-col-1 c-span-6 c-sml-span-12">
                                 <div class="c-label  "><label for="c-23-509">Date of Birth</label></div>
-                                <!-- <div class="c-editor">
-                                  <div class="c-editor-date"><input name="b_dob[]" type="text" id="c-23-509" placeholder="" class="c-datepicker"></div>
-                                  <div class="c-editor-date-icon"><i class="icon-calendar"></i></div>
-                                </div> -->
                                 <div class="c-editor">
                                     <div class="input-group date c-editor-date c-datepicker" >
                                       <input class="datepicker" name="b_dob[]" type="text" id="c-23-509"placeholder="" >
