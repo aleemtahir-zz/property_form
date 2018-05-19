@@ -4,12 +4,23 @@ $(document).ready(function(){
 	$(document).on('click', ".c-page-next-page", function() {
 		$('.c-forms-pages').children().each(function () {
 
-		  //console.log(tag.css('display'));
-		  if ($(this).css('display') == 'block') {
-		    $(this).css('display','none');
-		    $(this).next().css('display','block');
-		    return false;
-		  }
+			//console.log(tag.css('display'));
+			if ($(this).css('display') == 'block') {
+			    $(this).css('display','none');
+			    $(this).next().css('display','block');
+			    return false;
+			}
+
+		});
+
+		$('.c-forms-progress ol').children().each(function () {
+
+			//console.log(tag.css('display'));
+			if ( $(this).hasClass('c-page-selected') ) {
+				$(this).removeClass('c-page-selected');
+			    $(this).next().addClass('c-page-selected');
+			    return false;
+			}
 
 		});
 
@@ -18,12 +29,23 @@ $(document).ready(function(){
     $(document).on('click', ".c-page-previous-page", function() {
 		$('.c-forms-pages').children().each(function () {
 
-		  //console.log(tag.css('display'));
-		  if ($(this).css('display') == 'block') {
-		    $(this).css('display','none');
-		    $(this).prev().css('display','block');
-		    return false;
-		  }
+			//console.log(tag.css('display'));
+			if ($(this).css('display') == 'block') {
+			    $(this).css('display','none');
+			    $(this).prev().css('display','block');
+			    return false;
+			}
+
+		});
+
+		$('.c-forms-progress ol').children().each(function () {
+
+			//console.log(tag.css('display'));
+			if ( $(this).hasClass('c-page-selected') ) {
+				$(this).removeClass('c-page-selected');
+			    $(this).prev().addClass('c-page-selected');
+			    return false;
+			}
 
 		});
 

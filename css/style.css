@@ -969,7 +969,7 @@
     color: #cccccc;
 }
  .cognito .c-forms-form .c-placeholder-text-styled {
-    color: #cccccc;
+    color: #000000;
 }
  .cognito .c-forms-form textarea::-webkit-input-placeholder{
     color: #cccccc;
