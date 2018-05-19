@@ -67,6 +67,11 @@ $(document).ready(function(){
 
     		var new_arr		= arr.join('-');	
     		$(this).attr('id', new_arr);
+
+    		if($(this).hasClass('datepicker')){
+    			console.log(new_arr);
+    			$('#'+new_arr).datepicker();
+    		}
     	});
     	add_section.find('.c-datepicker').attr('id');
 		add_section.appendTo(section_group);
@@ -115,15 +120,21 @@ $(document).ready(function(){
 
 	});*/
 
-	/*$(function () {
-       $('#datetimepicker1').datetimepicker();
-    });*/
+	$(function () {
+       $('.datepicker').datetimepicker();
+    });
 
     /*$('#datetimepicker1').datepicker();*/
 
-    $('.datepicker').each(function(){
-	    $(this).datepicker();
-	});
+    /*$('.datepicker').each(function(){
+	    $(this).datetimepicker();
+	});*/
+
+	/*$('.datepicker').datepicker({
+        uiLibrary: 'bootstrap4'
+    });
+*/	
+	//$('#c-6-252').datepicker();
 
 });
 
