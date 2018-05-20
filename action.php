@@ -105,14 +105,14 @@
 								if ($yourname=='') $yourname = "(no name)"; 
 
 								// A recordset for merging tables 
-								$data = array(); 
+								/*$data = array(); 
 								$data[] = array('rank'=> 'A', 'firstname'=>$_POST['v_first'][0] , 'name'=>'Hill'      , 'number'=>'1523d', 'score'=>200, 'email_1'=>'sh@tbs.com',  'email_2'=>'sandra@tbs.com',  'email_3'=>'s.hill@tbs.com');
 								$data[] = array('rank'=> 'A', 'firstname'=>'Roger'  , 'name'=>'Smith'     , 'number'=>'1234f', 'score'=>800, 'email_1'=>'rs@tbs.com',  'email_2'=>'robert@tbs.com',  'email_3'=>'r.smith@tbs.com' );
 								$data[] = array('rank'=> 'B', 'firstname'=>'William', 'name'=>'Mac Dowell', 'number'=>'5491y', 'score'=>130, 'email_1'=>'wmc@tbs.com', 'email_2'=>'william@tbs.com', 'email_3'=>'w.m.dowell@tbs.com' );
 
 								echo "<pre>";print_r($data);echo "</pre>";
 								echo "FILE: ".__FILE__." LINE: ".__LINE__;
-								die();
+								die();*/
 
 								// Other single data items 
 								$x_num = 3152.456; 
@@ -142,7 +142,7 @@
 								// -------------------------------------------- 
 
 								// Merge data in the body of the document 
-								$TBS->MergeBlock('a,b', $data); 
+								$TBS->MergeBlock('a,b', $vendor); 
 
 								// Merge data in colmuns 
 								$data = array( 
@@ -167,11 +167,16 @@
 								// ----------------- 
 								// Output the result 
 								// ----------------- 
+								$var = file_get_contents('counter.txt');
+								$var++;
+								file_put_contents('counter.txt', $var);
+
+								if($var < 10)
+									$var = "0".$var;
 
 								// Define the name of the output file 
-								/*$save_as = (isset($_POST['save_as']) && (trim($_POST['save_as'])!=='') && ($_SERVER['SERVER_NAME']=='localhost')) ? trim($_POST['save_as']) : '';*/ 
-								$save_as	= 	'new';
-								$output_file_name = str_replace('.', '_'.date('Y-m-d').$save_as.'.', $template); 
+								$save_as	= 	'new1'.$var;
+								$output_file_name = $vendor[0][v_last]."_".$buyer[0][b_last]."_".$var.".docx"; 
 								if ($save_as==='') { 
 								    // Output the result as a downloadable file (only streaming, no data saved in the server) 
 								    $TBS->Show(OPENTBS_DOWNLOAD, $output_file_name); // Also merges all [onshow] automatic fields. 
