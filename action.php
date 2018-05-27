@@ -46,17 +46,18 @@ function convertNumberToWord($num = false)
     return implode(' ', $words);
 }
 
-function save_doc($filename='', $data='')
-{
+function save_doc($filename='', $vendor='', $buyer='', $property='')
+{	
+
 	if(empty($filename))
 		return false;
-	if(empty($data))
+	if(empty($vendor))
 		return false;
 
 
 	// Include classes 
-	include_once('open_tbs/tbs_class.php'); // Load the TinyButStrong template engine 
-	include_once('open_tbs/tbs_plugin_opentbs.php'); // Load the OpenTBS plugin 
+	include_once('lib/open_tbs/tbs_class.php'); // Load the TinyButStrong template engine 
+	include_once('lib/open_tbs/tbs_plugin_opentbs.php'); // Load the OpenTBS plugin 
 
 	// prevent from a PHP configuration problem when using mktime() and date() 
 	if (version_compare(PHP_VERSION,'5.1.0')>=0) { 
@@ -74,9 +75,9 @@ function save_doc($filename='', $data='')
 	// ------------------------------ 
 
 	// Retrieve the user name to display 
-	$yourname = (isset($_POST['v_first'][0])) ? $_POST['v_middle'][0] : ''; 
+	/*$yourname = (isset($_POST['v_first'][0])) ? $_POST['v_middle'][0] : ''; 
 	$yourname = trim(''.$yourname); 
-	if ($yourname=='') $yourname = "(no name)"; 
+	if ($yourname=='') $yourname = "(no name)"; */
 
 	// A recordset for merging tables 
 	/*$data = array(); 
@@ -115,7 +116,7 @@ function save_doc($filename='', $data='')
 	// -------------------------------------------- 
 
 	// Merge data in the body of the document 
-	$TBS->MergeBlock('a', $data); 
+	$TBS->MergeBlock('a', $vendor); 
 
 	// Merge data in colmuns 
 	/*$data = array( 
@@ -149,7 +150,17 @@ function save_doc($filename='', $data='')
 
 	// Define the name of the output file 
 	$save_as	= 	'new1'.$var;
-	$output_file_name = $data[0][v_last]."_".$data[0][b_last]."_".$var.".docx"; 
+
+	if(!empty($data[0][v_last]))
+		$vendor = $data[0][v_last];
+	else
+		$vendor = 'vendor';
+	if(!empty($data[0][v_last]))
+		$buyer = $data[0][v_last];
+	else
+		$buyer = 'buyer';
+
+	$output_file_name = $vendor."_".$buyer."_".$var.".docx"; 
 	if ($save_as==='') { 
 	    // Output the result as a downloadable file (only streaming, no data saved in the server) 
 	    $TBS->Show(OPENTBS_DOWNLOAD, $output_file_name); // Also merges all [onshow] automatic fields. 
@@ -158,7 +169,21 @@ function save_doc($filename='', $data='')
 	} else { 
 	    // Output the result as a file on the server. 
 	    $TBS->Show(OPENTBS_FILE, $output_file_name); // Also merges all [onshow] automatic fields. 
-	    // The script can continue. 
+	    // The script can continue.
+
+	    /*include_once('lib/phpword/bootstrap.php');
+	    $phpWord = new \PhpOffice\PhpWord\PhpWord();
+
+		//Open template and save it as docx
+		$document = $phpWord->loadTemplate($template);
+		$document->saveAs('temp.docx');
+
+		//Load temp file
+		$phpWord = \PhpOffice\PhpWord\IOFactory::load('temp.docx'); 
+
+		//Save it
+		$xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord , 'PDF');
+		$xmlWriter->save('result.pdf');   */
 	    exit("File [$output_file_name] has been created."); 
 	}
 }
@@ -216,7 +241,7 @@ function save_doc($filename='', $data='')
 	                            <div class="c-editor"> <!-- c-columns-0 -->
 		                            <div class="c-choice-option">
 		                            	<label>
-		                            		<input name="doc[]" type="radio" id="c-43-520" value="template">
+		                            		<input name="doc[]" type="radio" id="c-43-520" value="new">
 		                            		<span>Doc1</span>
 		                            	</label>
 		                            </div>
@@ -301,9 +326,9 @@ function save_doc($filename='', $data='')
 									echo "<pre>";print_r($_POST);echo "</pre>";
 									$doc 		= 	$_POST['doc'];
 
-									foreach ($doc as $name) {
+									foreach ($doc as $filename) {
 										
-										save_doc($name, $vendor);	
+										save_doc($filename, $vendor, $buyer, $property);	
 									}
 
 									
