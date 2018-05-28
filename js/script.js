@@ -4,12 +4,23 @@ $(document).ready(function(){
 	$(document).on('click', ".c-page-next-page", function() {
 		$('.c-forms-pages').children().each(function () {
 
-		  //console.log(tag.css('display'));
-		  if ($(this).css('display') == 'block') {
-		    $(this).css('display','none');
-		    $(this).next().css('display','block');
-		    return false;
-		  }
+			//console.log(tag.css('display'));
+			if ($(this).css('display') == 'block') {
+			    $(this).css('display','none');
+			    $(this).next().css('display','block');
+			    return false;
+			}
+
+		});
+
+		$('.c-forms-progress ol').children().each(function () {
+
+			//console.log(tag.css('display'));
+			if ( $(this).hasClass('c-page-selected') ) {
+				$(this).removeClass('c-page-selected');
+			    $(this).next().addClass('c-page-selected');
+			    return false;
+			}
 
 		});
 
@@ -18,12 +29,23 @@ $(document).ready(function(){
     $(document).on('click', ".c-page-previous-page", function() {
 		$('.c-forms-pages').children().each(function () {
 
-		  //console.log(tag.css('display'));
-		  if ($(this).css('display') == 'block') {
-		    $(this).css('display','none');
-		    $(this).prev().css('display','block');
-		    return false;
-		  }
+			//console.log(tag.css('display'));
+			if ($(this).css('display') == 'block') {
+			    $(this).css('display','none');
+			    $(this).prev().css('display','block');
+			    return false;
+			}
+
+		});
+
+		$('.c-forms-progress ol').children().each(function () {
+
+			//console.log(tag.css('display'));
+			if ( $(this).hasClass('c-page-selected') ) {
+				$(this).removeClass('c-page-selected');
+			    $(this).prev().addClass('c-page-selected');
+			    return false;
+			}
 
 		});
 
@@ -32,12 +54,13 @@ $(document).ready(function(){
     //Add Section
     $(document).on('click', ".c-repeating-section-add", function() {
     	var section_group 	= $(this).parent().find('.c-repeating-section-group');
-    	var add_section 	= section_group.children().last().clone(true);
+    	var add_section 	= section_group.children().last().clone();
 
     	add_section.css('display', '');
     	add_section.find('.c-editor input').val('');
     	
     	add_section.find('.c-editor input').each(function() {
+    		//console.log($(this));
     		var arr			= $(this).attr('id').split('-');
     		var new_value 	= parseInt(arr[2]) + 1;
     		
@@ -45,8 +68,14 @@ $(document).ready(function(){
 
     		var new_arr		= arr.join('-');	
     		$(this).attr('id', new_arr);
+
+    		if($(this).hasClass('datepicker')){
+    			//$('.datepicker');
+    			//console.log(new_arr);
+    			$(this).datepicker();
+    		}
     	});
-    	add_section.find('.c-datepicker').attr('id');
+    	//add_section.find('.c-datepicker').attr('id');
 		add_section.appendTo(section_group);
 
 		//numbering
@@ -78,30 +107,22 @@ $(document).ready(function(){
 		});
 	});
 
-    /*$(function () {
-        $('#c-6-252').datepicker();
-        $('#c-6-253').datepicker();
-        $('#c-6-254').datepicker();
-        $('#c-6-255').datepicker();
-    });*/
-	/*$('.c-datepicker').datepicker({
-	    defaultDate: "11/1/2013",
-	});*/
-	/*$(document).on('click', ".c-datepicker", function(){
-	    var id = $(this).attr('id');
-	    $('#'+id).datepicker();
 
-	});*/
+	$(function () {
+       $('.datepicker').datepicker();
+    });
 
-	/*$(function () {
-       $('#datetimepicker1').datetimepicker();
-    });*/
 
-    /*$('#datetimepicker1').datepicker();*/
-
-    $('.datepicker').each(function(){
-	    $(this).datepicker();
-	});
-
+    //Save Button
+    /*$('.save_btn').click(function(){
+        var clickBtnValue = $(this).val();
+        var ajaxurl = 'ajax.php',
+        data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    });
+*/
 });
 

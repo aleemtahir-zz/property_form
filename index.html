@@ -9,23 +9,28 @@
     <title>Cognito Forms</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no">
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">    
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"/>
+   
+<!--     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"/> -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1526338122299/recaptcha__en.js"></script>
-    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <!--  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" /> -->
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script> -->
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">    
+    <link rel="stylesheet" type="text/css" href="css/custom.css"> 
+    <script type="text/javascript" src="js/script.js"></script>
 
   </head>
   <body class="c-public-form cognito-background" >
@@ -117,17 +122,11 @@
                               <div class="c-date-date c-field c-col-9 c-sml-col-1 c-span-6 c-sml-span-12">
                                   <div class="c-label  "><label for="c-6-252">Date of Birth</label></div>
                                   <div class="c-editor">
-                                      <div class="input-group date c-editor-date c-datepicker" >
-                                        <input class="datepicker" name="v_dob[]" type="text" id="c-6-252" placeholder="" >
-                                      </div>
-                                      <div class="c-editor-date-icon input-group-addon"><i class="icon-calendar"></i></div>
+                                    <div class="input-group date c-editor-date c-datepicker" >
+                                      <input class="datepicker" name="v_dob[]" type="text" id="c-6-252"placeholder="" >
+                                    </div>
+                                    <div class="c-editor-date-icon input-group-addon"><i class="icon-calendar"></i></div>
                                   </div>
-                                  <!-- <div class="input-group date" data-provide="datepicker">
-                                      <input id="hi" type="text" class="form-control">
-                                      <div class="input-group-addon">
-                                          <span class="glyphicon glyphicon-th"></span>
-                                      </div>
-                                  </div> -->
 
                                   <div class="c-validation"></div>
                               </div>
@@ -444,61 +443,63 @@
                                 <div class="c-label "><label>Name</label></div>
                                 <div>
                                   <div class="c-offscreen"><label for="c-17-511">First</label></div>
-                                  <div class="c-editor c-span-1" style="width: 28.5714%; float: left;"><input type="text" id="c-17-511" placeholder="First"></div>
+                                  <div class="c-editor c-span-1" style="width: 28.5714%; float: left;"><input  name="b_first[]" type="text" id="c-17-511" placeholder="First"></div>
                                   <div class="c-offscreen"><label for="c-18-511">Middle</label></div>
-                                  <div class="c-editor c-span-1" style="width: 28.5714%; float: left;"><input type="text" id="c-18-511" placeholder="Middle"></div>
+                                  <div class="c-editor c-span-1" style="width: 28.5714%; float: left;"><input name="b_middle[]" type="text" id="c-18-511" placeholder="Middle"></div>
                                   <div class="c-offscreen"><label for="c-19-511">Last</label></div>
-                                  <div class="c-editor c-span-1" style="width: 28.5714%; float: left;"><input type="text" id="c-19-511" placeholder="Last"></div>
+                                  <div class="c-editor c-span-1" style="width: 28.5714%; float: left;"><input name="b_last[]" type="text" id="c-19-511" placeholder="Last"></div>
                                   <div class="c-offscreen"><label for="c-20-511">Suffix</label></div>
-                                  <div class="c-editor c-span-1" style="width: 14.2857%; float: left;"><input type="text" id="c-20-511" placeholder="Suffix"></div>
+                                  <div class="c-editor c-span-1" style="width: 14.2857%; float: left;"><input name="b_suffix[]" type="text" id="c-20-511" placeholder="Suffix"></div>
                                 </div>
                                 <div class="c-validation"></div>
                               </div>
                               <div class="c-text-singleline c-field c-col-1 c-sml-col-1 c-span-8 c-sml-span-12">
                                 <div class="c-label  "><label for="c-22-510">TRN #</label></div>
-                                <div class="c-editor"><input type="text" id="c-22-510" placeholder="Tax Registration Number"></div>
+                                <div class="c-editor"><input name="b_trn[]" type="text" id="c-22-510" placeholder="Tax Registration Number"></div>
                                 <div class="c-validation"></div>
                               </div>
                               <div class="c-date-date c-field c-col-9 c-sml-col-1 c-span-6 c-sml-span-12">
                                 <div class="c-label  "><label for="c-23-509">Date of Birth</label></div>
                                 <div class="c-editor">
-                                  <div class="c-editor-date"><input type="text" id="c-23-509" placeholder="" class="c-datepicker"></div>
-                                  <div class="c-editor-date-icon"><i class="icon-calendar"></i></div>
+                                    <div class="input-group date c-editor-date c-datepicker" >
+                                      <input class="datepicker" name="b_dob[]" type="text" id="c-23-509"placeholder="" >
+                                    </div>
+                                    <div class="c-editor-date-icon input-group-addon"><i class="icon-calendar"></i></div>
                                 </div>
                                 <div class="c-validation"></div>
                               </div>
                               <div class="c-text-singleline c-field c-col-15 c-sml-col-1 c-span-10 c-sml-span-12">
                                 <div class="c-label  "><label for="c-24-508">Occupation</label></div>
-                                <div class="c-editor"><input type="text" id="c-24-508" placeholder=""></div>
+                                <div class="c-editor"><input name="b_occupation[]" type="text" id="c-24-508" placeholder=""></div>
                                 <div class="c-validation"></div>
                               </div>
                               <div class="c-phone c-phone-international c-field c-col-1 c-sml-col-1 c-span-12 c-sml-span-12">
                                 <div class="c-label  "><label for="c-25-507">Phone</label></div>
-                                <div class="c-editor"><input type="text" id="c-25-507" placeholder=""></div>
+                                <div class="c-editor"><input name="b_phone[]" type="text" id="c-25-507" placeholder=""></div>
                                 <div class="c-validation"></div>
                               </div>
                               <div class="c-email c-field c-col-13 c-sml-col-1 c-span-12 c-sml-span-12">
                                 <div class="c-label  "><label for="c-26-506">Email</label></div>
-                                <div class="c-editor"><input type="text" id="c-26-506" placeholder=""></div>
+                                <div class="c-editor"><input name="b_email[]" type="text" id="c-26-506" placeholder=""></div>
                                 <div class="c-validation"></div>
                               </div>
                               <div class="c-address c-address-international c-field c-col-1 c-sml-col-1 c-span-24 c-sml-span-12">
                                 <div class="c-label "><label>Address</label></div>
                                 <div>
                                   <div class="c-offscreen"><label for="c-27-267">Address Line 1</label></div>
-                                  <div class="c-editor" style="float: left;"><input type="text" id="c-27-267" placeholder="Address Line 1"></div>
+                                  <div class="c-editor" style="float: left;"><input name="b_address1[]" type="text" id="c-27-267" placeholder="Address Line 1"></div>
                                   <div class="c-offscreen"><label for="c-28-267">Address Line 2</label></div>
-                                  <div class="c-editor" style="float: left;"><input type="text" id="c-28-267" placeholder="Address Line 2"></div>
+                                  <div class="c-editor" style="float: left;"><input name="b_address2[]" type="text" id="c-28-267" placeholder="Address Line 2"></div>
                                   <div class="c-offscreen"><label for="c-29-267">City</label></div>
-                                  <div class="c-editor c-partial-line" style="float: left;"><input type="text" id="c-29-267" placeholder="City"></div>
+                                  <div class="c-editor c-partial-line" style="float: left;"><input name="b_city[]" type="text" id="c-29-267" placeholder="City"></div>
                                   <div class="c-offscreen"><label for="c-30-267">State / Province / Region</label></div>
-                                  <div class="c-editor c-partial-line" style="float: left;"><input type="text" id="c-30-267" placeholder="State / Province / Region"></div>
+                                  <div class="c-editor c-partial-line" style="float: left;"><input name="b_state[]" type="text" id="c-30-267" placeholder="State / Province / Region"></div>
                                   <div class="c-offscreen"><label for="c-31-267">Postal / Zip Code</label></div>
-                                  <div class="c-editor c-partial-line" style="float: left;"><input type="text" id="c-31-267" placeholder="Postal / Zip Code"></div>
+                                  <div class="c-editor c-partial-line" style="float: left;"><input name="b_postal[]" type="text" id="c-31-267" placeholder="Postal / Zip Code"></div>
                                   <div class="c-offscreen"><label for="c-32-267">Country</label></div>
                                   <div class="c-editor c-partial-line" style="float: left;">
                                     <div class="c-dropdown">
-                                      <select id="c-32-267" class="c-placeholder-text-styled">
+                                      <select name="b_country[]" id="c-32-267" class="c-placeholder-text-styled">
                                         <option value="">Country</option>
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
@@ -769,19 +770,19 @@
                             <div class="c-label "><label>Address</label></div>
                             <div>
                               <div class="c-offscreen"><label for="c-34-526">Address Line 1</label></div>
-                              <div class="c-editor" style="float: left;"><input type="text" id="c-34-526" placeholder="Address Line 1"></div>
+                              <div class="c-editor" style="float: left;"><input name="p[address1]" type="text" id="c-34-526" placeholder="Address Line 1"></div>
                               <div class="c-offscreen"><label for="c-35-526">Address Line 2</label></div>
-                              <div class="c-editor" style="float: left;"><input type="text" id="c-35-526" placeholder="Address Line 2"></div>
+                              <div class="c-editor" style="float: left;"><input name="p[address2]" type="text" id="c-35-526" placeholder="Address Line 2"></div>
                               <div class="c-offscreen"><label for="c-36-526">City</label></div>
-                              <div class="c-editor c-partial-line" style="float: left;"><input type="text" id="c-36-526" placeholder="City"></div>
+                              <div class="c-editor c-partial-line" style="float: left;"><input name="p[city]" type="text" id="c-36-526" placeholder="City"></div>
                               <div class="c-offscreen"><label for="c-37-526">State / Province / Region</label></div>
-                              <div class="c-editor c-partial-line" style="float: left;"><input type="text" id="c-37-526" placeholder="State / Province / Region"></div>
+                              <div class="c-editor c-partial-line" style="float: left;"><input name="p[state]" type="text" id="c-37-526" placeholder="State / Province / Region"></div>
                               <div class="c-offscreen"><label for="c-38-526">Postal / Zip Code</label></div>
-                              <div class="c-editor c-partial-line" style="float: left;"><input type="text" id="c-38-526" placeholder="Postal / Zip Code"></div>
+                              <div class="c-editor c-partial-line" style="float: left;"><input name="p[postal]" type="text" id="c-38-526" placeholder="Postal / Zip Code"></div>
                               <div class="c-offscreen"><label for="c-39-526">Country</label></div>
                               <div class="c-editor c-partial-line" style="float: left;">
                                 <div class="c-dropdown">
-                                  <select id="c-39-526" class="">
+                                  <select name="p[country]" id="c-39-526" class="">
                                     <option value="">Country</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
@@ -1028,14 +1029,20 @@
                           </div>
                           <div class="c-currency c-field c-col-1 c-sml-col-1 c-span-7 c-sml-span-7">
                             <div class="c-label  "><label for="c-41-525">Sale Price</label></div>
-                            <div class="c-editor"><input type="text" id="c-41-525" placeholder=""></div>
+                            <div class="c-editor"><input name="p[sale_price]" type="text" id="c-41-525" placeholder=""></div>
                             <div class="c-validation"></div>
                           </div>
                           <div class="c-date-date c-field c-col-8 c-sml-col-8 c-span-5 c-sml-span-5">
                             <div class="c-label  "><label for="c-42-524">Contract Date</label></div>
-                            <div class="c-editor">
-                              <div class="c-editor-date"><input type="text" id="c-42-524" placeholder="" class="c-datepicker"></div>
+                            <!-- <div class="c-editor">
+                              <div class="c-editor-date"><input name="p[c_date]" type="text" id="c-42-524" placeholder="" class="c-datepicker"></div>
                               <div class="c-editor-date-icon"><i class="icon-calendar"></i></div>
+                            </div> -->
+                            <div class="c-editor">
+                                <div class="input-group date c-editor-date c-datepicker" >
+                                  <input class="datepicker" name="p[c_date]" type="text" id="c-42-524" placeholder="" >
+                                </div>
+                                <div class="c-editor-date-icon input-group-addon"><i class="icon-calendar"></i></div>
                             </div>
                             <div class="c-validation"></div>
                             <div class="c-helptext">Date of Sales Agreement</div>
@@ -1043,17 +1050,17 @@
                           <div class="c-choice-radiobuttons c-field c-col-13 c-sml-col-1 c-span-12 c-sml-span-12">
                             <legend class="c-label  ">Property Type</legend>
                             <div class="c-editor c-columns-0">
-                              <div class="c-choice-option"><label for="c-43-520"><input type="radio" name="group519" id="c-43-520"><span>House</span></label></div>
-                              <div class="c-choice-option"><label for="c-43-521"><input type="radio" name="group519" id="c-43-521"><span>Land only</span></label></div>
-                              <div class="c-choice-option"><label for="c-43-522"><input type="radio" name="group519" id="c-43-522"><span>Apartment </span></label></div>
-                              <div class="c-choice-option"><label for="c-43-523"><input type="radio" name="group519" id="c-43-523"><span>Commercial</span></label></div>
+                              <div class="c-choice-option"><label for="c-43-520"><input name="p[type][house]" type="radio" id="c-43-520"><span>House</span></label></div>
+                              <div class="c-choice-option"><label for="c-43-521"><input name="p[type][land]" type="radio" id="c-43-521"><span>Land only</span></label></div>
+                              <div class="c-choice-option"><label for="c-43-522"><input name="p[type][apartment]" type="radio" id="c-43-522"><span>Apartment </span></label></div>
+                              <div class="c-choice-option"><label for="c-43-523"><input name="p[type][commercial]" type="radio" id="c-43-523"><span>Commercial</span></label></div>
                             </div>
                             <div class="c-validation"></div>
                             <div class="c-helptext">Choose type of property</div>
                           </div>
                           <div class="c-currency c-field c-col-1 c-sml-col-1 c-span-12 c-sml-span-12">
                             <div class="c-label  "><label for="c-44-518">Deposit</label></div>
-                            <div class="c-editor"><input type="text" id="c-44-518" placeholder=""></div>
+                            <div class="c-editor"><input name="p[deposit]" type="text" id="c-44-518" placeholder=""></div>
                             <div class="c-validation"></div>
                           </div>
                         </div>
@@ -1085,10 +1092,10 @@
               <div class="c-forms-document-links"></div>
             </div>
           </div>
-          <div class="c-footer-terms" sys:attach="dataview" dataview:data="{binding entry, source={{ Cognito.Forms.model }} }">
+          <div class="c-footer-terms" sys:attach="dataview" dataview:data="">
             <ul class="terms">
-              <li><a href="https://www.cognitoforms.com/reportabuse?form=https%3A%2F%2Fwww.cognitoforms.com%2FMarcusWilliams1%2FHMFPropertySalesDataForm" target="_blank">Report Abuse</a></li>
-              <li><a href="https://www.cognitoforms.com/terms" target="_blank">Terms of Service</a></li>
+              <!-- <li><a href="https://www.cognitoforms.com/reportabuse?form=https%3A%2F%2Fwww.cognitoforms.com%2FMarcusWilliams1%2FHMFPropertySalesDataForm" target="_blank">Report Abuse</a></li>
+              <li><a href="https://www.cognitoforms.com/terms" target="_blank">Terms of Service</a></li> -->
             </ul>
           </div>
         </div>
